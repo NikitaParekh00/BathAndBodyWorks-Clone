@@ -16,11 +16,6 @@ drop_1.addEventListener('mouseout',function(){
     dropdowns[0].classList.toggle("open-dropdown")
 })
 
-// drop_1.addEventListener('click',function(){
-//     dropdowns[0].classList.toggle("open-dropdown")
-// })
-
-
 
 drop_2.addEventListener('mouseover',function(){
     dropdowns[1].classList.toggle("open-dropdown")
@@ -77,40 +72,8 @@ close.addEventListener('click',()=>{
     navbar[0].classList.toggle('open-nav')
     nav.classList.toggle('pos');
     document.body.style.background = 'none';
-    //   nav.style.overflowY = 'scroll';
+   
 })
 
 
-// window.onclick = (event) =>{
-//     if (event.target != nav){
-//         if(navbar[0].classList.contains('open-nav')){
-//             navbar[0].classList.toggle('open-nav')
-//             console.log(event.target)
-//         }
-       
-//     }
-// }
 
-
-
-//Footer
-// let help_btn = document.getElementsByClassName('help-btn');
-// let cols = document.getElementsByClassName('col')
-
-// help_btn[0].addEventListener('click',()=>{
-//     for(var i=1;i<=4;i++){
-//         cols[i].classList.toggle("open-end-nav")
-//     }
-    
-// })
-// sub_cat_drop[2].addEventListener('mouseover',()=>{
-//     //    console.log(sub_cat_sub_el[3])
-//        event.target.childNodes[1].classList.toggle("open-sub-category")
-//        condole.log(event.target.childNodes[3].innerHTML)
-//     })
-
-// sub_cat_drop[2].addEventListener('mouseleave',()=>{
-//     //    console.log(sub_cat_sub_el[3])
-//         event.target.childNodes[1].classList.toggle("open-sub-category")
-//         console.log(event.target.childNodes[3].innerHTML)
-// })
