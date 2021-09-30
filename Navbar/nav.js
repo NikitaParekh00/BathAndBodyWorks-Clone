@@ -55,25 +55,7 @@ for(var i=0;i<sub_cat_drop.length;i++){
     })
 }
 
-//Mobile Nav slide
-let burger = document.getElementsByClassName('burger');
-let navbar = document.getElementsByClassName('nav-links');
-let close = document.getElementById('close-btn')
-let nav = document.querySelector('nav');
 
-burger[0].addEventListener('click',()=>{
-      navbar[0].classList.toggle('open-nav');
-      document.body.style.background = 'rgba(0,0,0,0.4)';
-      nav.classList.toggle('pos');
-      nav.style.overflowY = 'scroll';
-})
-
-close.addEventListener('click',()=>{
-    navbar[0].classList.toggle('open-nav')
-    nav.classList.toggle('pos');
-    document.body.style.background = 'none';
-   
-})
 
 
 

@@ -118,16 +118,7 @@ function displayCartFun(data) {
   btmHtml = `
     <button id="updateBag" onclick="refreshCart()">UPDATE BAG</button>
     <div id="cartFinalPrice">
-        <div id="cartFinalPrice_Promo">
-            <div id="cartFinalPrice_Promo_Box">
-                <strong>PROMOTION CODE</strong>
-                <p>Only one code can be applied per order.</p>
-                <div id="cartFinalPrice_Promo_Box_input">
-                    <input type="text" id="promoInput">
-                    <button id="promoBtn">APPLY</button>
-                </div>
-            </div>
-        </div>
+
        
         <div id="cartFinalPrice_PriceDetails">
             <div class="price_cart">
@@ -185,39 +176,23 @@ function refreshCart() {
   getLsData();
 }
 
-function paymentModal(amount, finaltax, total, totalProduct) {
-  let user = localStorage.getItem("user");
+function paymentModal() {
+  let html = "";
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+  var span = document.getElementsByClassName("close")[0];
 
-  if (user === null) {
-    alert("Please Login to place an order");
-  } else {
-    let info = JSON.parse(user);
-    let fname = info.fname;
-    let lname = info.lname;
-    let city = info.city;
-    let email = info.email;
-    let password = info.password;
-    let phone = info.phone;
-    let state = info.state;
-    let street = info.street;
-    let zipcode = info.zipcode;
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
 
-    let html = "";
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-    var span = document.getElementsByClassName("close")[0];
-
-    span.onclick = function () {
+  window.onclick = function (event) {
+    if (event.target == modal) {
       modal.style.display = "none";
-    };
+    }
+  };
 
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
-    html += `
+  html += `
         <div class="cartPayment">
             <div class="cartPayment_Loading">
                 <img src="https://media2.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" class="img" alt="">
@@ -227,56 +202,6 @@ function paymentModal(amount, finaltax, total, totalProduct) {
             </div>
         </div>
         `;
-
-    document.getElementById("displayPaymentModal").innerHTML = html;
-
-    setTimeout(function () {
-      let cHtml = "";
-      cHtml += `
-            <div class="paymentInfo">                
-            <div class="paymentInfo_add">
-                <h1>ORDER SUMMARY</h1>
-                <p><strong>Name: </strong> ${fname} ${lname}</p>
-                <p><strong>Delivery Address:</strong> ${street}, ${city}, ${state}, ${zipcode}</p>
-                <p><strong>Email: </strong> ${email}</p>
-                <p><strong>Phone: </strong> ${phone}</p>
-                <strong>Select payment method</strong>
-                <select id="cust" onchange="SetSelectedValue()" >
-                    <option value="1">Select Payment Mode</option>
-                    <option value="DEBIT CARD">Debit Card</option>
-                    <option value="CREDIT CARD">Credit Card</option>
-                    <option value="NET BANKING">Net Banking</option>
-                    <option value="CASH ON DELIVERY">Cash On Delivery</option>
-                </select>
-            </div>
-            <div class="paymentInfo_OrderSumm">
-                <p><strong>Total Product:</strong> ${totalProduct}</p>
-                <p><strong>Total Amount:</strong> $${amount}</p>
-                <p><strong>Delivery Amount:</strong> $5.99</p>
-                <p><strong>Sales Tax:</strong> $${finaltax}</p>
-                <p><strong>Fianl Amount:</strong> $${total}</p>
-                <button id="payBtn" onclick="processPayment()">Pay Now</button>
-            </div>
-            </div>
-            `;
-      document.getElementById("displayPaymentModal").innerHTML = cHtml;
-    }, 2000);
-  }
-}
-
-function processPayment() {
-  let html = "";
-
-  html += `
-    <div class="cartPayment">
-        <div class="cartPayment_Loading">
-            <img src="https://i.gifer.com/BAxY.gif" class="img" alt="">
-        </div>
-        <div class="cartPayment_text">
-            <strong>Placing your order, Please wait!!!</strong>
-        </div>
-    </div>
-    `;
 
   document.getElementById("displayPaymentModal").innerHTML = html;
 
