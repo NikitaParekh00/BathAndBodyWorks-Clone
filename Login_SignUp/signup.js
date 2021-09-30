@@ -11,23 +11,30 @@ async function getUserData(){
     let phone = document.getElementById("signUpPhone").value
     let password = document.getElementById("signUpPassword").value
 
-    let body = {"Fname" :Fname,
-                "Lname": Lname, 
-                "email": email,
-                "street": street,
-                "city": city,
-                "state": state,
-                "zipcode": zipcode, 
-                "phone": phone,
-                "password": password}
+    if(localStorage.getItem("users")===null){
+        localStorage.setItem("users", JSON.stringify([]));
+    }
 
-    await fetch(`https://bath-and-body-mock-server.herokuapp.com/users`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },  
-        body: JSON.stringify(body),
-    }).then(response => response.json()).then(data => console.log(data)).catch(error => console.log(error))
+    //grab and prepare user data
+    let user = {Fname,
+                Lname, 
+                email,
+                street,
+                city,
+                state,
+                zipcode, 
+                phone,
+                password};
+
+   
+        //get array from localStorage
+    let arr = JSON.parse(localStorage.getItem("users"));
+
+    //push new user to array
+    arr.push(user);
+
+    localStorage.setItem("users", JSON.stringify(arr));
+   
 
     window.location.href="../Login_SignUp/login.html"
 }
