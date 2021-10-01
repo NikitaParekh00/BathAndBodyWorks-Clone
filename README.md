@@ -21,13 +21,13 @@ To create this clone following Tech stack is used.
 
 ## Login Page :
 
-  <img width="929" alt="Screenshot (640)" src="Readme img/login.PNG">
+  <img width="929" alt="Screenshot (640)" src="Readme img/login.png">
 
 ## SignUp Page :
 
-  <img width="929" alt="Screenshot (640)" src="Readme img/signup.PNG">
+  <img width="929" alt="Screenshot (640)" src="Readme img/signup.png">
 
-### - Cart
+### Cart
 
 <img width="929" alt="Screenshot (640)" src="Readme img/cart.png">
 
