@@ -11,10 +11,9 @@ function setImageTime() {
   let image = document.getElementById("changeImage");
   let currentPos = 0;
   let img = [
-    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.160/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw77da7ae3/images/Fall2021/diff_2pk-flash_650_fa2_hm_to_3.jpg?yocs=s_",
-    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.160/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw691b5f1a/images/Fall2021/diff_2pk-flash_650_fa2_hm_to_2.jpg?yocs=s_",
-    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.160/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw00bd3b2a/images/Fall2021/diff_2pk-flash_650_fa2_hm_to_4.jpg?yocs=s_",
-    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.160/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw516381b1/images/Fall2021/diff_2pk-flash_650_fa2_hm_to_5.jpg?yocs=s_",
+    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.161/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw5db23fe2/images/Fall2021/fbc_thanks_0_FA3_hm_1.jpg?yocs=s_",
+    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.161/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw1c3b5c8c/images/Fall2021/fbc_thanks_0_FA3_hm_2.jpg?yocs=s_",
+    "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.161/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw9924b5c1/images/Fall2021/fbc_thanks_0_FA3_hm_3.jpg?yocs=s_",
   ];
 
   function volgendefoto() {
@@ -22,7 +21,7 @@ function setImageTime() {
     image.src = img[currentPos];
   }
 
-  var timeImage = setInterval(volgendefoto, 2000);
+  var timeImage = setInterval(volgendefoto, 1000);
 
   document.getElementById("pBtn").addEventListener("click", stopTimmer);
 
